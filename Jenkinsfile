@@ -10,10 +10,8 @@ pipeline {
         stage('Test') {
             steps {
                 echo 'Testing..'
-                sh 'USER root'
                 sh 'apt update && curl -fsSL https://get.docker.com | sh'
                 sh 'usermod -aG docker jenkins'
-                sh 'USER jenkins'
             }
         }
         stage('Deploy') {
