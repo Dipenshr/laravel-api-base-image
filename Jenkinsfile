@@ -15,7 +15,6 @@ pipeline {
         stage('Deploy') {
             steps {
                 sh 'docker build -t test_laravel_api_base_image:${BUILD_NUMBER} .'
-	            sh 'docker tag test_laravel_api_base_image dipenshr/test_laravel_api_base_image:${BUILD_NUMBER}'
             }
         }
         stage('Push') {
